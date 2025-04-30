@@ -31,7 +31,7 @@ jobs:
 
     - name: Run Container (Local Verification)
       run: |
-        docker run -d -p 2000:2000 --name docker-container ${{ secrets.DOCKER_USERNAME }}/my-app:latest
+        docker run -d -p 2000:2000 --name test-container ${{ secrets.DOCKER_USERNAME }}/my-app:latest
         sleep 10
         curl -f http://localhost:2000 || (echo "App did not respond!" && exit 1)
         docker stop test-container
