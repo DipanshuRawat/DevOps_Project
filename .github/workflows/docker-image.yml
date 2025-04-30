@@ -24,7 +24,8 @@ jobs:
     - name: Build and Push Docker Image
       uses: docker/build-push-action@v5
       with:
-        context: .
+        context: ./CI-CD Pipeline with GitHub Actions & Docker
+        file: ./CI-CD Pipeline with GitHub Actions & Docker/Dockerfile
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/my-app:latest
 
